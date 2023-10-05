@@ -36,8 +36,11 @@ $('form').validate({
             required: false
         },
     },
+    submitHandler: function(form) {
+        alert("O formulário foi enviado com sucesso!");
+        form.reset();
+    },
+    invalidHandler: function(form, validator) {
+        alert("O formulário está inválido.");
+    }
 })
-
-$("#form").submit(function(){
-    alert("O formulario foi enviado.");
-});
